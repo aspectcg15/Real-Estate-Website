@@ -1,0 +1,7 @@
+@(listing: models.Listing, user_id: Integer, listing_id: Integer)@if(listing != null){
+<img id="propertyphoto" src="@listing.getPhoto_path()" style="float:left;">@views.html.formatAddress.render(listing.getPropertyAddress())<br/>
+@views.html.formatPrice(listing.getPrice())<br/>
+@views.html.formatContact(listing.getUsers())<br/>
+@views.html.formatDescription(listing.getDescription()),<br/>
+@views.html.viewRatingComponent(user_id, listing_id)
+}

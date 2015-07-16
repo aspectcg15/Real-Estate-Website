@@ -1,0 +1,61 @@
+@( title: String, listings: java.util.List[Listing] , recommendations: java.util.List[Listing])
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/stylesheets/main.css" type="text/css"/>
+	@*<script type="application/javascript" src="/assets/javascripts/AJAX%20sender%20code.js"></script>*@
+	<title>@title</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <script src="@routes.Assets.versioned("javascripts/AsyncLoaderV2.js")" type="application/javascript"></script>
+</head>
+<body>
+	<div id="pageContainer">
+		<div id="siteHeader"><img id="bannerImage" src="/assets/images/banner.png"/></div>
+		<div id="siteMenu">
+			<ul id="mainMenu">
+				<li><a>menuItem0</a></li>
+				<li><a>menuItem1</a></li>
+				<li><a>menuItem2</a></li>
+				<li><a>menuItem3</a></li>
+				<li><a>menuItem4</a></li>
+				<li><a>menuItem5</a></li>
+				<li><a class="floatRight">menuItem6</a></li>
+			</ul>
+		</div>
+		<div id="searchPanel">
+			<form name="" action="" method="GET">
+				<span>Search for:</span><input/><button type="submit">Submit</button>
+			</form>
+		</div>
+		<div id="filterBar">
+			<span>filter by:</span><select></select><span>User Id:</span><input id=user_id_textbox type="textbox" value=0 />
+			<br/>
+		</div>
+		<div id='recommendations'>
+			@if(recommendations!=null){
+				@views.html.viewRecommendations.render(recommendations)
+			}
+		</div>
+		<div id="listingsPanel">
+			<table>
+				<tr>
+					<th>Image</th>
+					<th>Description</th>
+					<th>Location</th>
+					<th>Price</th>
+				</tr>
+			@if(listings != null){@for(listing <- listings){
+				<tr>
+					@*<a target="/details?listing_id=@listing.getListing_id()">*@
+					<td><a target="/details?listing_id=@listing.getListing_id()" onclick="console.log('CLEEEEEK!');setUserInQuery(this.target);"><image src="@listing.getPhoto_path()"/></a></td>
+					<td>@listing.getDescription()</td>
+					<td>@listing.getCity()</td>
+					<td>@listing.getPrice()</td>
+				</tr>
+			}}
+			</table>
+		</div>
+	</div>
+</body>
+</html>

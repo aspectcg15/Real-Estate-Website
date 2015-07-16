@@ -1,0 +1,124 @@
+#pageContainer {
+	width: 800px;
+}
+
+#siteHeader {
+    color: #000;
+}
+
+#bannerImage {
+	width: 100%;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul#mainMenu {
+    margin-left: 19px;
+    overflow: hidden;
+    padding: 0px;
+    position: relative;
+}
+
+#siteMenu, #searchPanel, #filterBar, #listingsPanel{
+	width: inherited;
+}
+
+#siteMenu, #searchPanel, #filterBar, #listingsPanel{
+	border-color: #000000;
+}
+
+#searchPanel{
+	padding: 10px;
+}
+
+#searchPanel input{
+	margin: 0px 10px;
+}
+
+#filterBar{
+}
+#listingsPanel{
+	height: 100px;
+}
+
+ul#mainMenu li {
+    display: inline;
+    list-style: outside none none;
+}
+
+a {
+	cursor: pointer;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+
+ul#mainMenu li a {
+    background-color: #000000;
+    color: #FFFFFF;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 28px;
+    margin-right: 3px;
+    padding: 0px 10px;
+    position: relative;
+    text-decoration: none;
+    border-radius: 5px 5px;
+}
+
+ul#mainMenu li.selected a {
+    border-bottom: medium none;
+    color: #FFF;
+    padding-bottom: 1px;
+}
+
+ul#mainMenu li.selected a, ul#mainMenu li a:hover {
+    background-color: #0077C0;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  position: relative;
+}
+.rating > button {
+  color: orange;
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  border: none;
+  background: transparent;
+}
+.rating > button:hover:before,
+.rating > button:hover ~ button:before {
+   content: "\2605";
+   position: absolute;
+}
+
+span{
+padding: 0px 5px;
+}
+
+#user_id_textbox{
+text-align: right;
+}
+
+img{
+width: 100%;
+height: 200ps;
+border-radius: 5px;
+}
+
+#recommend_list img{
+width: 18%;
+height: 100px;
+float: left;
+}
+
+#recommend_list li{
+display: inline;
+}

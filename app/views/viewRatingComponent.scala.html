@@ -1,0 +1,5 @@
+@(user_id: Integer, product_id: Integer)<span>Rate: </span><span class='rating'>
+@for(i <- 0 until 5){
+	<button id='user_id=@user_id product_id=@product_id rating=@(5 - i)'>☆</button>
+}
+</span>

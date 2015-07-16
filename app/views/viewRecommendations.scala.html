@@ -1,0 +1,5 @@
+@(recommendationsList: java.util.List[Listing])<p>Your recommendations!</p><ul id="recommend_list">
+@for(i <- 0 until recommendationsList.size()){
+<li id='recommend_list @i'>@views.html.viewFormatRecommendation.render(recommendationsList.get(i))</li>
+}
+</ul>

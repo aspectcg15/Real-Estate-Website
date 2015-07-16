@@ -1,0 +1,9 @@
+@()@*@(listings: Seq[Listing])<ol class="listings">
+@for(listing <- listings){
+	<li>@views.html.formatListing(listing)</li>
+}
+</ol>*@<div class="siteHeader">@views.html.siteHeader()</div>
+<div class="siteMenu">@views.html.siteMenu.render()</div>
+<div class="searchPanel">@views.html.searchPanel.render()</div>
+<div class="filterBar>@views.html.filterBar.render()</div>
+<div class="listingsPanel">@views.html.listingsPanel.render()</div>

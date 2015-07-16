@@ -1,0 +1,7 @@
+New log file opened at Thu Jul 16 14:59:26 BST 2015 by 10088@skinsella-e6430
+Taking next connection to: 62362
+New client attempting to connect on port: 62363-62362
+  Address = /10.62.19.102:62362
+This client on port 62363 has uuid 1ab3cc7a-286d-402d-a5d0-62df82028a90 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-1ab3cc7a-286d-402d-a5d0-62df82028a90
+Taking next connection to: 62362

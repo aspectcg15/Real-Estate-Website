@@ -1,0 +1,3 @@
+@(users: models.users)
+Name: @if(users != null){@users.getFname() @users.getLname()}<br/>
+Contact: @if(users != null){@users.getContact()}

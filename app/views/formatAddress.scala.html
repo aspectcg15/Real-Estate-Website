@@ -1,0 +1,5 @@
+@(address: models.address)Zip Code: @if(address != null){@address.getZip_code()}<br/>
+Street: @if(address != null){@address.getAddressField()}<br/>
+City: @if(address != null){@address.getCity()}<br/>
+Country: @if(address != null){@address.getCountry()}<br/>
+State: @if(address != null){@address.getState()}
