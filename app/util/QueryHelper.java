@@ -14,7 +14,6 @@ import models.Listing;
 import models.address;
 import models.longtext.longtextCastException;
 import models.property;
-import models.propertylisting;
 import models.propertyphoto;
 import models.users;
 import models.varchar45.varchar45CastException;
@@ -47,7 +46,7 @@ public class QueryHelper {
 	 * @param resultSet
 	 * @return
 	 */
-	private static List<Listing> parseListing(ResultSet resultSet) {
+	public static List<Listing> parseListing(ResultSet resultSet) {
 		if(resultSet == null){
 			return null;
 		}
@@ -238,31 +237,31 @@ public class QueryHelper {
 		return result;
 	}
 
-	private static <T> T runQuery(FullListingQuery query, Function<ResultSet, T> parser) {
+	public static <T> T runQuery(FullListingQuery query, Function<ResultSet, T> parser) {
 		return runQuery(query.toString(), parser);
 	}
 	
-	private static <T> T runQuery(String query, Function<ResultSet, T> parser) {
+	public static <T> T runQuery(String query, Function<ResultSet, T> parser) {
 		T result = null;
 		try(Connection conn = DB.getConnection();){
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			result = parser.apply(resultSet);
+			if(parser != null)
+				result = parser.apply(resultSet);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
 
-	private static class FullListingQuery {
-		//TODO
+	public static class FullListingQuery {
 		private String query = "SELECT a.*, b.*, c.*, d.*, e.*, f.* FROM propertylisting a, property b, propertyphoto c, address d, users e, address f WHERE a.property_prop_id=b.prop_id AND a.propertyphoto_photo_id=c.photo_id AND b.address_zip_id1=d.zip_id AND a.users_user_id=e.user_id AND e.address_zip_id=f.zip_id";
 		
 		private FullListingQuery(){
 			query += ";";
 		}
 		
-		private FullListingQuery(String where){
+		public FullListingQuery(String where){
 			query += " AND "+ where+ ";";
 		}
 		

@@ -107,18 +107,11 @@ padding: 0px 5px;
 text-align: right;
 }
 
-img{
-width: 100%;
-height: 200ps;
-border-radius: 5px;
+#recommend_list li{
+display: inline;
 }
 
 #recommend_list img{
 width: 18%;
 height: 100px;
-padding: 0px 5px;
-}
-
-#recommend_list li{
-display: inline;
 }

@@ -23,6 +23,7 @@ import models.varchar45;
 
 public class MainPageController extends Controller {
 
+	@SuppressWarnings("unused")
 	private static final String PRINT_LISTINGS_SQL = "SELECT * FROM ";
 	private static final String PRINT_USERS_SQL = "SELECT fname, lname FROM users";
 	
@@ -43,8 +44,7 @@ public class MainPageController extends Controller {
 	}*/
 	
 	public Result handleRequest(){
-		if(flash().containsKey("flash key"))
-			Logger.info(flash().get("flash key"));
+		
 		List<Listing> temp = QueryHelper.getListingFromRange(0,25);
 		//TODO
 		List<Listing> tempReco = new ArrayList<Listing>();
